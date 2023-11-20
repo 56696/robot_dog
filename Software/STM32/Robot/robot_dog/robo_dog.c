@@ -328,16 +328,16 @@ uint8_t RobotDogGetServoEnStatus()
 	return g_robot_dog.en;
 }
 
-void RobotDogServo_FL1(float num)
+void RobotDogServo_FL1(float num)//左前腿 一号关节  旋转角度
 {
 	uint16_t angle = 0;
 	if(num<0 || num>270)
 	{
 		return;
 	} 
-	angle = 500.0 + (num + g_robot_dog.motor_angle_bais.bais_leg4.bais_motor1) * 2000.0 / CORRECT_270; 
+	angle = 500.0 + (num + g_robot_dog.motor_angle_bais.bais_leg4.bais_motor1) * 2000.0 / CORRECT_270;   //旋转角度
 	if(g_servo_en)  //定义为带参数宏
-		TIM_SetCompare2(TIM4,angle);
+		TIM_SetCompare2(TIM4,angle);  
 	else
 		TIM_SetCompare2(TIM4,0);
 }
