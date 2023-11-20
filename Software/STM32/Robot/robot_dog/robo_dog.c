@@ -131,7 +131,7 @@ void RobotDogParaInit()
   * @param   
   * @return 
   */
-void RobotDogCtrlSemaphoreGive()
+void RobotDogCtrlSemaphoreGive()//给信号量
 {
 	portBASE_TYPE xHigherPriorityTaskWoken;
 	xSemaphoreGiveFromISR(g_xRobotDogCtrlSemaphore, &xHigherPriorityTaskWoken);//如果释放信号量导致更高优先级的任务变为了就绪态，xHigherPriorityTaskWoken == pdTRUE
