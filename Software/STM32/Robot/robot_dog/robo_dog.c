@@ -214,7 +214,7 @@ void RobotDogCtrl()
 	float angle_pre = 0.0, delta_angle = 0.0;
 	static float angle_last = 0.0;
 
-	g_robot_dog.legFR.motorVal.hipAbducent = g_dog_angle->dog_angle[0];
+	g_robot_dog.legFR.motorVal.hipAbducent = g_dog_angle->dog_angle[0];//通过RobotDogGetCtrlAngle函数，获取串口发送的值
 	g_robot_dog.legFR.motorVal.hip = g_dog_angle->dog_angle[1];
 	g_robot_dog.legFR.motorVal.knee = g_dog_angle->dog_angle[2];
 
