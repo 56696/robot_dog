@@ -308,7 +308,7 @@ void RobotDogServoDisable()
   * @param  
   * @param  
   */
-void RobotDogServoEnCtrl(uint8_t is_en)
+void RobotDogServoEnCtrl(uint8_t is_en) //舵机使能函数  调用在遥控函数
 {
 	g_servo_en = is_en;
 	g_robot_dog.en = g_servo_en;  //添加判断，奇异角度不使能
