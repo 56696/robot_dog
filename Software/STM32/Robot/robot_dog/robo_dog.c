@@ -50,7 +50,7 @@ xSemaphoreHandle g_xRobotDogCtrlSemaphore;
   */
 void RobotDogInit()
 {
-	RobotDogGPIO_Init();
+	RobotDogGPIO_Init();//初始化GPIO
 	RobotDogParaInit();
 #if 1
 	TIM2_PWM_Init(20000-1,84-1);
