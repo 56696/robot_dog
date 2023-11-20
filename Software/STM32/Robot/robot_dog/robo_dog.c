@@ -150,7 +150,7 @@ void RobotDogCtrlTask(void *pvParameters)//控制任务函数
 {
 	while(1)
 	{
-		if(xSemaphoreTake(g_xRobotDogCtrlSemaphore, 100000) == pdTRUE)//信号量达到100000时
+		if(xSemaphoreTake(g_xRobotDogCtrlSemaphore, 100000) == pdTRUE)//等待100000拿取信号量
 		{
 			RobotDogCtrl();
 		}
