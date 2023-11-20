@@ -131,6 +131,8 @@ void RobotDogParaInit()
   * @param   
   * @return 
   */
+
+//信号量在串口解析结束后，RobotDogCtrlSemaphoreGive，在ctrlTask中，每隔100000，Take一次信号量
 void RobotDogCtrlSemaphoreGive()//给信号量
 {
 	portBASE_TYPE xHigherPriorityTaskWoken;
