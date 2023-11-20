@@ -263,7 +263,8 @@ void RobotDogCtrl()
 	{
 		return;
 	}
-#if 1
+#if 1   
+	//将角度值传给舵机
 	RobotDogServo_FR1(g_robot_dog.legFR.motorVal.hipAbducent);
 	RobotDogServo_FR2(g_robot_dog.legFR.motorVal.hip);
 	RobotDogServo_FR3(g_robot_dog.legFR.motorVal.knee);
