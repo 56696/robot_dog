@@ -146,11 +146,11 @@ void RobotDogCtrlSemaphoreGive()
   * @param   
   * @return 
   */
-void RobotDogCtrlTask(void *pvParameters)
+void RobotDogCtrlTask(void *pvParameters)//控制任务函数
 {
 	while(1)
 	{
-		if(xSemaphoreTake(g_xRobotDogCtrlSemaphore, 100000) == pdTRUE)
+		if(xSemaphoreTake(g_xRobotDogCtrlSemaphore, 100000) == pdTRUE)//信号量达到100000时
 		{
 			RobotDogCtrl();
 		}
@@ -162,7 +162,7 @@ void RobotDogCtrlTask(void *pvParameters)
   * @param   
   * @return 
   */
-void RobotDogGetCtrlAngle(DogAngle *angle)
+void RobotDogGetCtrlAngle(DogAngle *angle)//获取控制角度
 {
 	g_dog_angle = angle;
 }
@@ -172,7 +172,7 @@ void RobotDogGetCtrlAngle(DogAngle *angle)
   * @param  
   * @param  
   */
-uint8_t RobotDogCtrlProtected(Leg *leg)
+uint8_t RobotDogCtrlProtected(Leg *leg)//控制保护
 {
 	if(leg->first_flg)
 	{
@@ -288,7 +288,7 @@ void RobotDogCtrl()
   * @param  
   * @param  
   */
-void RobotDogServoDisable()
+void RobotDogServoDisable()//清零
 {
 	TIM_SetCompare2(TIM4,0);
 	TIM_SetCompare3(TIM4,0);
