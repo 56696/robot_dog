@@ -51,14 +51,14 @@ xSemaphoreHandle g_xRobotDogCtrlSemaphore;
 void RobotDogInit()
 {
 	RobotDogGPIO_Init();//初始化GPIO
-	RobotDogParaInit();
+	RobotDogParaInit();//设置补偿置
 #if 1
 	TIM2_PWM_Init(20000-1,84-1);
 	TIM3_PWM_Init(20000-1,84-1);
 	TIM4_PWM_Init(20000-1,84-1);
-	RobotDogServoDisable();
+	RobotDogServoDisable();//清空占空比
 #endif
-
+	//任务的初始化
 	xTaskCreate((TaskFunction_t )RobotDogCtrlTask,
 		(const char* )"RobotDogCtrlTask",
 		(uint16_t )RobotDogCTRL_STK_SIZE,
