@@ -68,7 +68,7 @@ void RemoteCtrlProcess()
 			send_data[i * 2 + 1] = (remot_ch_val[i] & 0xff);
 		}
 		RemoteCtrlDataPacket();
-		if((remot_ch_val[5 - 1] > 200) && (remot_ch_val[5 - 1] < 1200))
+		if((remot_ch_val[5 - 1] > 200) && (remot_ch_val[5 - 1] < 1200))//如果通道5的值在此区间则开启对舵机的控制
 		{
 			RobotDogServoEnCtrl(1);
 		}
